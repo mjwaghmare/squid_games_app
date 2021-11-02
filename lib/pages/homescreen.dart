@@ -109,7 +109,7 @@ class GameCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInLeft(
-      duration: Duration(milliseconds: (index + 1) * 3000),
+      duration: Duration(milliseconds: (index + 1) * 250),
       child: Container(
         margin: const EdgeInsets.only(top: 15),
         child: Column(

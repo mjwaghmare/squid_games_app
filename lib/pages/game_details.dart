@@ -26,7 +26,7 @@ class GameDetails extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FadeInLeft(
-                delay: Duration(milliseconds: 600),
+                delay: Duration(milliseconds: 500),
                 child: Text(
                   game.gameName,
                   style: GoogleFonts.orbitron(
@@ -37,41 +37,38 @@ class GameDetails extends StatelessWidget {
               ),
               const SizedBox(height: 2),
               FadeInLeft(
-                  delay: Duration(milliseconds: 620),
+                  delay: Duration(milliseconds: 520),
                   child: Divider(color: AppColors.yellowColor, thickness: 2)),
               const SizedBox(height: 5),
               FadeInLeft(
-                delay: Duration(milliseconds: 650),
+                delay: Duration(milliseconds: 550),
                 child: Text(
                   game.gameDetails,
                   style: GoogleFonts.openSans(
-                      color: AppColors.whiteColor, fontSize: 17),
+                      color: AppColors.whiteColor, fontSize: 15),
                 ),
               ),
               const SizedBox(height: 15),
-              FadeIn(
-                delay: Duration(milliseconds: 670),
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(6.0),
-                  ),
-                  height: MediaQuery.of(context).size.height * 0.5,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(6.0),
-                    child: Hero(
-                      tag: game.gameImage,
-                      child: Image.asset(
-                        game.gameImage,
-                        fit: BoxFit.cover,
-                      ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6.0),
+                ),
+                height: MediaQuery.of(context).size.height * 0.5,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(6.0),
+                  child: Hero(
+                    tag: game.gameImage,
+                    child: Image.asset(
+                      game.gameImage,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
               ),
               const SizedBox(height: 25),
               FadeInUp(
-                delay: Duration(milliseconds: 650),
+                delay: Duration(milliseconds: 600),
                 child: CustomButton(
                   label: "Participate Now",
                   textClr: AppColors.whiteColor,
