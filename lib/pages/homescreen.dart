@@ -30,36 +30,50 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              "Total Reward",
-              style: GoogleFonts.openSans(
-                  color: AppColors.yellowColor,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold),
+            FadeInDown(
+              delay: Duration(milliseconds: 300),
+              // duration: Duration(seconds: 2),
+              child: Text(
+                "Total Reward",
+                style: GoogleFonts.openSans(
+                    color: AppColors.yellowColor,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
-            Text(
-              "45.6 billion ₩",
-              style: GoogleFonts.openSans(
-                  color: AppColors.yellowColor,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold),
+            FadeInDown(
+              delay: Duration(milliseconds: 500),
+              // duration: Duration(seconds: 3),
+              child: Text(
+                "45.6 billion ₩",
+                style: GoogleFonts.openSans(
+                    color: AppColors.yellowColor,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
             SizedBox(height: 15),
-            Text(
-              "There are 7 games to be played in the total. The winner of the first game deserves to move on to the next. Every game you win, your money doubles. Only one person will win this game",
-              style: GoogleFonts.openSans(
-                  color: AppColors.whiteColor.withOpacity(0.6),
-                  fontSize: 14,
-                  wordSpacing: 1.5,
-                  height: 1.5),
+            FadeInDown(
+              delay: Duration(milliseconds: 800),
+              child: Text(
+                "There are 7 games to be played in the total. The winner of the first game deserves to move on to the next. Every game you win, your money doubles. Only one person will win this game",
+                style: GoogleFonts.openSans(
+                    color: AppColors.whiteColor.withOpacity(0.6),
+                    fontSize: 14,
+                    wordSpacing: 1.5,
+                    height: 1.5),
+              ),
             ),
             SizedBox(height: 15),
-            Text(
-              "Games",
-              style: GoogleFonts.orbitron(
-                  color: AppColors.whiteColor,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold),
+            FadeInDown(
+              delay: Duration(milliseconds: 900),
+              child: Text(
+                "Games",
+                style: GoogleFonts.orbitron(
+                    color: AppColors.whiteColor,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
             Flexible(
               child: ListView.builder(
@@ -95,7 +109,7 @@ class GameCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInLeft(
-      duration: Duration(milliseconds: (index + 1) * 4000),
+      duration: Duration(milliseconds: (index + 1) * 3000),
       child: Container(
         margin: const EdgeInsets.only(top: 15),
         child: Column(
