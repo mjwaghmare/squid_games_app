@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -93,50 +94,53 @@ class GameCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 15),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "${index + 1}. ${game.gameName}",
-            style: GoogleFonts.orbitron(
-                color: AppColors.whiteColor,
-                fontSize: 17,
-                fontWeight: FontWeight.bold),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: InkWell(
-              splashColor: AppColors.yellowColor,
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (ctx) => GameDetails(game),
+    return FadeInLeft(
+      duration: Duration(milliseconds: (index + 1) * 4000),
+      child: Container(
+        margin: const EdgeInsets.only(top: 15),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "${index + 1}. ${game.gameName}",
+              style: GoogleFonts.orbitron(
+                  color: AppColors.whiteColor,
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: InkWell(
+                splashColor: AppColors.yellowColor,
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) => GameDetails(game),
+                    ),
+                  );
+                },
+                borderRadius: BorderRadius.circular(6.0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(6.0),
                   ),
-                );
-              },
-              borderRadius: BorderRadius.circular(6.0),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6.0),
-                ),
-                height: MediaQuery.of(context).size.height * 0.21,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(6.0),
-                  child: Hero(
-                    tag: game.gameImage,
-                    child: Image.asset(
-                      game.gameImage,
-                      fit: BoxFit.cover,
+                  height: MediaQuery.of(context).size.height * 0.21,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(6.0),
+                    child: Hero(
+                      tag: game.gameImage,
+                      child: Image.asset(
+                        game.gameImage,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
