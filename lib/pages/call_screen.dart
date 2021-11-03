@@ -1,10 +1,35 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:squid_games_app/utils/app_colors.dart';
 
 import 'agreement_screen.dart';
 
-class CallScreen extends StatelessWidget {
+class CallScreen extends StatefulWidget {
   const CallScreen({Key key}) : super(key: key);
+
+  @override
+  _CallScreenState createState() => _CallScreenState();
+}
+
+class _CallScreenState extends State<CallScreen> {
+  int seconds = 0;
+  Timer timer;
+
+  void startTimer() {
+    timer = Timer.periodic(Duration(seconds: 1), (_) {
+      setState(() {
+        seconds++;
+      });
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    startTimer();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +45,17 @@ class CallScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      "8650  4006",
-                      style:
-                          TextStyle(color: AppColors.yellowColor, fontSize: 25),
+                      "0456  0456",
+                      style: GoogleFonts.orbitron(
+                          color: AppColors.whiteColor, fontSize: 25, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 5),
+                    SizedBox(height: 15),
                     Text(
-                      "04:56",
-                      style: TextStyle(color: AppColors.blueGrey, fontSize: 18),
+                      "00 : $seconds",
+                      style: GoogleFonts.orbitron(
+                        color: AppColors.whiteColor,
+                        fontSize: 16,
+                      ),
                     ),
                   ],
                 ),
@@ -52,6 +80,7 @@ class CallScreen extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
+                  timer.cancel();
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (ctx) => AgreementScreen(),
@@ -113,7 +142,7 @@ class CallerImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 180,
+      height: 165,
       width: 180,
       decoration: BoxDecoration(
         shape: BoxShape.circle,

@@ -1,15 +1,14 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:squid_games_app/models/game_model.dart';
+import 'package:squid_games_app/models/characters.dart';
 import 'package:squid_games_app/utils/app_colors.dart';
 import 'package:squid_games_app/utils/widgets/custom_appbar.dart';
-import 'package:squid_games_app/utils/widgets/custom_button.dart';
 
-class GameDetails extends StatelessWidget {
-  final GameModel game;
+class CharacterDetails extends StatelessWidget {
+  final CharacterModel character;
 
-  const GameDetails(this.game, {Key key}) : super(key: key);
+  const CharacterDetails(this.character, {Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,7 @@ class GameDetails extends StatelessWidget {
               FadeInLeft(
                 delay: Duration(milliseconds: 500),
                 child: Text(
-                  game.gameName,
+                  character.characterName,
                   style: GoogleFonts.orbitron(
                       color: AppColors.whiteColor, fontSize: 25, fontWeight: FontWeight.bold),
                 ),
@@ -41,7 +40,7 @@ class GameDetails extends StatelessWidget {
               FadeInLeft(
                 delay: Duration(milliseconds: 550),
                 child: Text(
-                  game.gameDetails,
+                  character.characterDetails,
                   style: GoogleFonts.openSans(color: AppColors.whiteColor, fontSize: 15),
                 ),
               ),
@@ -55,21 +54,12 @@ class GameDetails extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(6.0),
                   child: Hero(
-                    tag: game.gameImage,
+                    tag: character.characterImage,
                     child: Image.asset(
-                      game.gameImage,
+                      character.characterImage,
                       fit: BoxFit.cover,
                     ),
                   ),
-                ),
-              ),
-              const SizedBox(height: 25),
-              FadeInUp(
-                delay: Duration(milliseconds: 600),
-                child: CustomButton(
-                  label: "Participate Now",
-                  textClr: AppColors.whiteColor,
-                  primaryClr: AppColors.yellowColor,
                 ),
               ),
               const SizedBox(height: 25),

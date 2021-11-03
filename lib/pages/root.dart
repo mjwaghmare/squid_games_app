@@ -47,7 +47,7 @@ class _RootPageState extends State<RootPage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: CustomButton(
-              label: "📞  8650 4006",
+              label: "📞  0456 0456",
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
