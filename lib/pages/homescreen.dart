@@ -36,9 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Text(
                 "Total Reward",
                 style: GoogleFonts.openSans(
-                    color: AppColors.yellowColor,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
+                    color: AppColors.yellowColor, fontSize: 15),
               ),
             ),
             FadeInDown(
@@ -48,11 +46,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 "45.6 billion ₩",
                 style: GoogleFonts.openSans(
                     color: AppColors.yellowColor,
-                    fontSize: 30,
+                    fontSize: 28,
                     fontWeight: FontWeight.bold),
               ),
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 12),
             FadeInDown(
               delay: Duration(milliseconds: 800),
               child: Text(

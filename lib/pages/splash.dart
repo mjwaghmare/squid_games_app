@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset("assets/squid_game_logo_video.mp4")
+    _controller = VideoPlayerController.asset("assets/pink_soldiers.mp4")
       ..initialize().then((_) {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
         setState(() {
@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
         });
       });
     new Future.delayed(const Duration(milliseconds: 6500), () {
-      Get.offAll(() => RootPage(), transition: Transition.fadeIn);
+      Get.offAll(() => RootPage(), transition: Transition.zoom);
     });
   }
 

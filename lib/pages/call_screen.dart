@@ -26,7 +26,7 @@ class CallScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 5),
                     Text(
-                      "DIALLING...",
+                      "04:56",
                       style: TextStyle(color: AppColors.blueGrey, fontSize: 18),
                     ),
                   ],
